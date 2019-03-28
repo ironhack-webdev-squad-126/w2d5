@@ -6,17 +6,17 @@
 
 html,
 body {
-    /* font-family: 'Poppins', sans-serif; */
-    font-family: 'VT323', monospace;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'VT323', monospace;
     background-color: black;
-    color: chartreuse;
+    color: chartreuse; */
 }
 
 .container {
     padding: 25px calc((100vw - 960px) / 2);
 }
 
-p {
+/* p {
     font-size: 60px;
 }
 
@@ -29,4 +29,17 @@ p {
 
 .ball-wrapper {
     display: flex;
+} */
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(150, 150, 150);
+    margin: 15px;
 }
