@@ -6,11 +6,18 @@
 
 html,
 body {
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'VT323', monospace;
+    background-color: black;
+    color: chartreuse;
 }
 
 .container {
     padding: 25px calc((100vw - 960px) / 2);
+}
+
+p {
+    font-size: 60px;
 }
 
 .ball {
