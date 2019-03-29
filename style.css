@@ -12,6 +12,11 @@ body {
     color: chartreuse; */
 }
 
+body {
+    display: flex;
+    justify-content: center;
+}
+
 .container {
     padding: 25px calc((100vw - 960px) / 2);
 }
