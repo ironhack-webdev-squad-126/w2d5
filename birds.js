@@ -8,19 +8,27 @@ function setup() {
     )
 }
 
-let ypos = 0
+const ACCELERATION = 0.3
+let ypos = 200
+let velocity = 0
 
 function draw() {
     clear()
     background(240)
 
     fill(0)
-    if (ypos > 640) ypos = 0
+    if (ypos > 640) {
+        ypos = 0
+        velocity = 0
+    }
 
     if (mouseIsPressed) {
-        ypos -= 1
+        velocity += ACCELERATION * -1
     } else {
-        ypos += 1
+        velocity += ACCELERATION
     }
+
+    ypos += velocity
+
     image(img, 300, ypos, img.width / 10, img.height / 10)
 }
