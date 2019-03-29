@@ -14,11 +14,11 @@ class Bird {
     }
 
     draw() {
-        fill(0)
-        if (this.ypos > 640) {
-            this.ypos = 0
-            this.velocity = 0
+        if (this.ypos > GAME_HEIGHT || this.ypos < 0) {
+            game.over()
         }
+
+        fill(0)
 
         // mouseIsPressed comes from P5
         if (mouseIsPressed) {
