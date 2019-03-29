@@ -8,3 +8,6 @@ function setup() {
 function draw() {
     game.draw()
 }
+
+console.log('https://medium.com/@gisderdube')
+console.log('lukas@dube.io')
