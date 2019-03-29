@@ -11,6 +11,7 @@ class Bird {
         this.ypos = 200
         this.velocity = 0
         this.firstMouseClick = true
+        this.x = 300
     }
 
     draw() {
@@ -34,6 +35,16 @@ class Bird {
 
         this.ypos += this.velocity
 
-        image(this.img, 300, this.ypos, this.img.width / 10, this.img.height / 10)
+        image(this.img, this.x, this.ypos, this.img.width / 10, this.img.height / 10)
+        this.setRect()
+    }
+
+    setRect() {
+        this.rect = {
+            left: this.x,
+            top: this.ypos,
+            right: this.x + this.img.width / 10,
+            bottom: this.ypos + this.img.height / 10,
+        }
     }
 }

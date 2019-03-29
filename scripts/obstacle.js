@@ -18,5 +18,35 @@ class Obstacle {
         this.x -= 7
         rect(this.x, 0, this.width, this.topEnd)
         rect(this.x, this.botY, this.width, GAME_HEIGHT - this.botY)
+        this.checkCollision()
+    }
+
+    checkCollision() {
+        const upperRect = {
+            left: this.x,
+            right: this.x + this.width,
+            top: 0,
+            bottom: this.topEnd,
+        }
+
+        const lowerRect = {
+            left: this.x,
+            right: this.x + this.width,
+            top: this.botY,
+            bottom: GAME_HEIGHT,
+        }
+
+        if (intersectRect(upperRect, game.bird.rect) || intersectRect(lowerRect, game.bird.rect)) {
+            game.over()
+        }
+
+        function intersectRect(r1, r2) {
+            return !(
+                r2.left > r1.right ||
+                r2.right < r1.left ||
+                r2.top > r1.bottom ||
+                r2.bottom < r1.top
+            )
+        }
     }
 }
