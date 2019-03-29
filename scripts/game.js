@@ -11,10 +11,14 @@ class Game {
     init() {}
 
     setup() {
+        createCanvas(GAME_WIDTH, GAME_HEIGHT)
+        frameRate(60)
         this.bird.setup()
     }
 
     draw() {
+        clear()
+        background(240)
         this.bird.draw()
     }
 }
