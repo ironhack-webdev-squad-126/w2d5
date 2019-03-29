@@ -26,7 +26,7 @@ function draw() {
 
     if (mouseIsPressed) {
         if (firstMouseClick) {
-            velocity = 0
+            velocity = -6
             firstMouseClick = false
         }
         velocity += ACCELERATION * -1
