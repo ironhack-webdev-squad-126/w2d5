@@ -12,6 +12,8 @@ const ACCELERATION = 0.3
 let ypos = 200
 let velocity = 0
 
+let firstMouseClick = true
+
 function draw() {
     clear()
     background(240)
@@ -23,8 +25,13 @@ function draw() {
     }
 
     if (mouseIsPressed) {
+        if (firstMouseClick) {
+            velocity = 0
+            firstMouseClick = false
+        }
         velocity += ACCELERATION * -1
     } else {
+        firstMouseClick = true
         velocity += ACCELERATION
     }
 
