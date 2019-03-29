@@ -1,23 +1,25 @@
 /* eslint-disable */
+let img
 function setup() {
     createCanvas(640, 640)
     frameRate(60)
     background(230)
+    img = loadImage('assets/bird.png')
 }
 
 let ypos = 0
-let yposTwo = 0
 
 function draw() {
     clear()
     background(230)
 
-    if (ypos > 640) ypos = 0
-    if (yposTwo > 640) yposTwo = 0
-
     fill(0)
+    if (ypos > 640) ypos = 0
 
-    ellipse(400, ypos++, 80, 80)
-    yposTwo += 2
-    ellipse(300, yposTwo, 80, 80)
+    if (mouseIsPressed) {
+        ypos -= 1
+    } else {
+        ypos += 1
+    }
+    image(img, 300, ypos, img.width / 7, img.height / 7)
 }
