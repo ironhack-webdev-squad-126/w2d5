@@ -4,7 +4,7 @@ class Bird {
   constructor() {}
 
   setup() {
-    this.img = loadImage('w2d5/assets/bird.png');
+    this.img = loadImage('assets/bird.png');
 
     this.ypos = 200;
     this.velocity = 0;
